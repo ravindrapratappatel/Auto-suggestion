@@ -12,6 +12,8 @@ function App() {
   const listitem = ['Milk', 'Coffee', 'Oranges', 'Bread'];
   const [list, setlist] = useState(listitem);
   const [input, setinput] = useState('');
+
+  //function to handle change in input field
   function handlechange(val) {
     setinput(val);
     if (val === '') {
@@ -21,6 +23,8 @@ function App() {
       setlist(list.filter(x => x.toLowerCase().match(lowercase)));
     }
   }
+
+  //function to add random text
   function handle_click() {
     const randomString = Math.random().toString(36).substring(2,7);
     setlist(oldArray => [...oldArray, randomString]);
